@@ -1,61 +1,7 @@
 
-const musics = [
-	"Ooh just you.mp3",
-	"Berlin.mp3",
-	"Yeu 5.mp3",
-	"Giac mo rat tho.mp3",
-	"Kem duyen.mp3",
-	"Nguoi em co do.mp3",
-	"Kimi no wa.mp3",
-	"Tuy am.mp3",
-	"Hong Kong 1.mp3",
-	"Anh da quen voi co don.mp3",
-	"So Long.mp3",
-	"Duong toi cho em ve Cukak remix.mp3",
-	"Chay ve khoc voi anh Cukak remix.mp3",
-	"Lemon.mp3",
-	"Yoru ni kakeru.mp3",
-	"Tabun.mp3",
-	"Normal no more.mp3",
-	"Heads Will Roll (Jaydon Lewis Remix).mp3",
-	"Co gai m52.mp3",
-	"Chay ngay di.mp3",
-	"Noi nay co anh.mp3",
-	"Vi yeu cu dam dau.mp3",
-	"Muon roi ma sao con.mp3",
-	"Co chac yeu la day.mp3",
-	"Cuoi thoi.mp3",
+const musics = [];
 
-
-];
-  const images = [
-	"https://i1.sndcdn.com/artworks-Uzf3azSVV1GS3jjq-7XDTaQ-t500x500.jpg",
-	"https://i.ytimg.com/vi/6KCff8T5tR0/hqdefault.jpg",
-	"https://imgt.taimienphi.vn/cf/Images/2017/4/ti/14/video-lyrics-loi-bai-hat-yeu-5-rhymastic-karaoke-cover.jpg",
-	"https://i.scdn.co/image/ab67616d0000b273f3e649671639abc13cff4876",
-	"https://i.ytimg.com/vi/cvoyUIIAdrY/maxresdefault.jpg",
-	"https://i.ytimg.com/vi/CUBbxuOPHcE/maxresdefault.jpg",
-	"https://i1.sndcdn.com/artworks-000203329692-m42wlg-t500x500.jpg",
-	"https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/covers/f/9/f9c0475ec02716554fba3f63e5b4ac37_1504991428.jpg",
-	"https://avatar-ex-swe.nixcdn.com/playlist/2018/10/10/5/b/a/2/1539155622062_500.jpg",
-	"https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/covers/a/b/ab44498b5b432879428719390baf1180_1490064587.jpg",
-	"https://vtv1.mediacdn.vn/thumb_w/640/2019/7/28/vinh-khuat-la-ai-thong-tin-tieu-su-ve-vinh-khuat-20190408-031004-1564292886170116017035.jpg",
-	"https://i.scdn.co/image/ab67616d00001e02dcac152b497477aebeb6d35a",
-	"https://i.ytimg.com/vi/CiwpC12YFZE/maxresdefault.jpg",
-	"https://i1.sndcdn.com/artworks-mVJpUjCi3StSy484-sUSHqQ-t500x500.jpg",
-	"https://imgs.ototoy.jp/imgs/jacket/0515/00000003.1583898741.9218_320.jpg",
-	"https://data.chiasenhac.com/data/cover/125/124314.jpg",
-	"https://i.ytimg.com/vi/9Euv7GDUl2Q/maxresdefault.jpg",
-	"https://i.ytimg.com/vi/GTarlWQjil0/maxresdefault.jpg",
-	"https://i.scdn.co/image/ab67616d0000b2736826d1bdc990f19a6c2e4840",
-	"https://avatar-ex-swe.nixcdn.com/song/2018/07/05/2/4/9/c/1530757427354_640.jpg",
-	"https://upload.wikimedia.org/wikipedia/vi/1/1d/N%C6%A1i_n%C3%A0y_c%C3%B3_anh_-_Single_Cover.jpg",
-	"https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/0/3/a/c/03ac82cbf720ea5d24129dc5a2bb5bbe.jpg",
-	"https://i.ytimg.com/vi_webp/xypzmu5mMPY/maxresdefault.webp",
-	"https://i.ytimg.com/vi/6t-MjBazs3o/maxresdefault.jpg",
-	"https://i.scdn.co/image/ab67616d0000b2737cd903c07645cda72a2d59cd",
-	
-  ];
+  const images = [];
   const image = document.getElementById("image");
   const song = document.getElementById("song");
   const name = document.getElementById("name");
@@ -72,7 +18,7 @@ const musics = [
 	"Túy âm",
 	"Hong Kong 1",
 	"Anh đã quen với cô đơn",
-	"So Long (fav one)",
+	"So Long",
 	"Đường tôi chở em về (Cukak remix)",
 	"Chạy về khóc với anh (Cukak remix)",
 	"Lemon",
@@ -88,6 +34,11 @@ const musics = [
 	"Có chắc yêu là đây",
 	"Cưới thôi",
   ];
+  for(let i=0;i<names.length;i++)
+{
+	musics[i]= './musics/'+names[i]+'.mp3';
+	images[i]= './images/'+names[i]+'.jpg';
+}
   let checker = [];
   let newdiv;
   let divClass;
@@ -464,7 +415,7 @@ const musics = [
 	const newSelectionsH = SelectionsH + scroll_value;
 	if(newthumbW > 80&&newthumbW <= 200)
 	{
-		thumbb.style.opacity= newthumbW / thumbW;
+		
 		thumbb.style.width = newthumbW + 'px';
 		thumbb.style.height = newthumbW + 'px';
 	}
@@ -490,9 +441,7 @@ const musics = [
   });
   const thumbW = thumbb.offsetWidth;
   const musicc = document.querySelector('.music');
-  
   const musicH = musicc.offsetHeight;
-  
   const SelectionsH = Selections.offsetHeight;
   
   

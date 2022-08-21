@@ -1,6 +1,6 @@
 
 const musics = [
-	"Ooh Just You.mp3",
+	"Ooh just you.mp3",
 	"Berlin.mp3",
 	"Yeu 5.mp3",
 	"Giac mo rat tho.mp3",

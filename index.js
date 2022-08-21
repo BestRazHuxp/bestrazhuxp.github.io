@@ -415,7 +415,6 @@ const musics = [];
 	const newSelectionsH = SelectionsH + scroll_value;
 	if(newthumbW > 80&&newthumbW <= 200)
 	{
-		
 		thumbb.style.width = newthumbW + 'px';
 		thumbb.style.height = newthumbW + 'px';
 	}

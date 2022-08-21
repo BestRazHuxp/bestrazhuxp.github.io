@@ -462,15 +462,15 @@ const musics = [
 	const newthumbW = thumbW - scroll_value;
 	const newMusicH = musicH - scroll_value;
 	const newSelectionsH = SelectionsH + scroll_value;
-	if(newthumbW > 0&&newthumbW <= 200)
+	if(newthumbW > 80&&newthumbW <= 200)
 	{
 		thumbb.style.opacity= newthumbW / thumbW;
 		thumbb.style.width = newthumbW + 'px';
 		thumbb.style.height = newthumbW + 'px';
 	}
-	else if(newthumbW <= 0){
-		thumbb.style.width = 0;
-		thumbb.style.height = 0;
+	else if(newthumbW <= 80){
+		thumbb.style.width = 80;
+		thumbb.style.height = 80;
 	}
 	else if(newthumbW >= 200)
 	{

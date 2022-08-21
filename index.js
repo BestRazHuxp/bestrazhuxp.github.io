@@ -1,29 +1,30 @@
+
 const musics = [
-	"https://cdn.glitch.global/1be79063-a1e0-41ce-b542-75c81f76f851/Y2Mate.is%20-%20Ooh%20Just%20You%20(BeeBB%20REMIX)%20%20L%C3%8A%20THI%E1%BB%86N%20HI%E1%BA%BEU%20OFFICIAL-0OyiGcFXDiU-160k-1660444765382.mp3?v=1660444794568",
-	"https://cdn.glitch.me/1be79063-a1e0-41ce-b542-75c81f76f851/Berlin.wav?v=1660446542078",
-	"https://cdn.glitch.me/1be79063-a1e0-41ce-b542-75c81f76f851/Yeu%205.wav?v=1660475340036",
-	"https://cdn.glitch.me/1be79063-a1e0-41ce-b542-75c81f76f851/Giac%20mo%20rat%20tho.wav?v=1660624355825",
-	"https://cdn.glitch.me/1be79063-a1e0-41ce-b542-75c81f76f851/Kem%20duyen.wav?v=1660625914721",
-	"https://cdn.glitch.global/1be79063-a1e0-41ce-b542-75c81f76f851/Nguoi%20Em%20Co%20Do%20Orinn%20Remix_%20-%20Rum_%20Daa.mp3?v=1660626247721",
-	"https://cdn.glitch.global/1be79063-a1e0-41ce-b542-75c81f76f851/Y2Mate.is%20-%20(%E5%90%9B%E3%81%AE%E5%90%8D%E3%81%AF%20%20Kimi%20no%20Na%20wa)%20Nandemonaiya%20-%20Kamishiraishi%20Mone%20(Maxone%20Remix)%20%E2%99%AA-D4Fi1YBbzDY-160k-1660283439340.mp3?v=1660690080644",
-	"https://cdn.glitch.me/1be79063-a1e0-41ce-b542-75c81f76f851/Tuy%20am.wav?v=1660625963433",
-	"https://cdn.glitch.global/1be79063-a1e0-41ce-b542-75c81f76f851/Hong%20Kong%201.mp3?v=1660716324977",
-	"https://cdn.glitch.me/1be79063-a1e0-41ce-b542-75c81f76f851/Anh%20da%20quen%20voi%20co%20don.wav?v=1660625958208",
-	"https://cdn.glitch.me/1be79063-a1e0-41ce-b542-75c81f76f851/So%20Long.wav?v=1660813314271",
-	"https://cdn.glitch.global/1be79063-a1e0-41ce-b542-75c81f76f851/%C4%90%C6%B0%E1%BB%9Dng%20t%C3%B4i%20ch%E1%BB%9F%20em%20v%E1%BB%81%20Cukak%20Remix.mp3?v=1660812438840",
-	"https://cdn.glitch.global/1be79063-a1e0-41ce-b542-75c81f76f851/Ch%E1%BA%A1y%20v%E1%BB%81%20kh%C3%B3c%20v%E1%BB%9Bi%20anh%20Cukak%20remix.mp3?v=1660812719025",
-	"https://cdn.glitch.global/1be79063-a1e0-41ce-b542-75c81f76f851/Y2Mate.is%20-%20%E7%B1%B3%E6%B4%A5%E7%8E%84%E5%B8%AB%20%20-%20Lemon%20%20Kenshi%20Yonezu-SX_ViT4Ra7k-160k-1660471050919.mp3?v=1660817456611",
-	"https://cdn.glitch.global/1be79063-a1e0-41ce-b542-75c81f76f851/Y2Mate.is%20-%20%E3%80%90Vietsub%E3%80%91Yoru%20ni%20Kakeru%E3%80%8C%E5%A4%9C%E3%81%AB%E9%A7%86%E3%81%91%E3%82%8B%E3%80%8DYOASOBI-qerVyrLKzA0-160k-1660110797919.mp3?v=1660928229750",
-	"https://cdn.glitch.global/1be79063-a1e0-41ce-b542-75c81f76f851/Y2Mate.is%20-%20YOASOBI%E3%80%8C%E3%81%9F%E3%81%B6%E3%82%93%E3%80%8DOfficial%20Music%20%20Video-8iuLXODzL04-160k-1660189153329.mp3?v=1660928340946",
-	"https://cdn.glitch.global/1be79063-a1e0-41ce-b542-75c81f76f851/Y2Mate.is%20-%20Normal%20No%20More%20-%20TYSM%20(Lyrics%20%2B%20Vietsub)%20%20TikTok%20%E2%99%AB-9Euv7GDUl2Q-160k-1660145316549.mp3?v=1660962730110",
-	"https://cdn.glitch.global/1be79063-a1e0-41ce-b542-75c81f76f851/Y2Mate.is%20-%20Yeah%20Yeah%20Yeahs%20-%20Heads%20Will%20Roll%20(Jaydon%20Lewis%20Remix)-GTarlWQjil0-160k-1660147216793.mp3?v=1660964798801",
-	"https://cdn.glitch.global/1be79063-a1e0-41ce-b542-75c81f76f851/Y2Mate.is%20-%20C%C3%B4%20g%C3%A1i%20m52%20%E2%80%A3%20HuyR%20ft.%20T%C3%B9ng%20Viu%20(bimm%20release)-nHK0u40Ompc-160k-1660155063643.mp3?v=1660972656699",
-	"https://cdn.glitch.global/1be79063-a1e0-41ce-b542-75c81f76f851/Ch%E1%BA%A1y%20ngay%20%C4%91i.mp3?v=1660973121796",
-	"https://cdn.glitch.global/1be79063-a1e0-41ce-b542-75c81f76f851/Noi%20nay%20co%20anh.mp3?v=1660999497408",
-	"https://cdn.glitch.global/1be79063-a1e0-41ce-b542-75c81f76f851/Vi%20yeu%20cu%20dam%20dau.mp3?v=1661000353206",
-	"https://cdn.glitch.global/1be79063-a1e0-41ce-b542-75c81f76f851/Muon%20roi%20ma%20sao%20con.mp3?v=1661000543938",
-	"https://cdn.glitch.global/1be79063-a1e0-41ce-b542-75c81f76f851/Y2Mate.is%20-%20S%C6%A0N%20T%C3%99NG%20M-TP%20%20C%C3%93%20CH%E1%BA%AEC%20Y%C3%8AU%20L%C3%80%20%C4%90%C3%82Y%20%20OFFICIAL%20MUSIC%20VIDEO-6t-MjBazs3o-160k-1660183163746.mp3?v=1661000821244",
-	"https://cdn.glitch.global/1be79063-a1e0-41ce-b542-75c81f76f851/Y2Mate.is%20-%20C%C6%B0%E1%BB%9Bi%20Th%C3%B4i%20-%20Masew%20x%20Masiu%20x%20B%20Ray%20x%20TAP%20(%20Lyrics%20Audio%20)-_8ldAdQd9WU-160k-1660183481101.mp3?v=1661001182601",
+	"Ohh Just You.mp3",
+	"Berlin.mp3",
+	"Yeu 5.mp3",
+	"Giac mo rat tho.mp3",
+	"Kem duyen.mp3",
+	"Nguoi em co do.mp3",
+	"Kimi no wa.mp3",
+	"Tuy am.mp3",
+	"Hong Kong 1.mp3",
+	"Anh da quen voi co don.mp3",
+	"So Long.mp3",
+	"Duong toi cho em ve Cukak remix.mp3",
+	"Chay ve khoc voi anh Cukak remix.mp3",
+	"Lemon.mp3",
+	"Yoru ni kakeru.mp3",
+	"Tabun.mp3",
+	"Normal no more.mp3",
+	"Heads Will Roll (Jaydon Lewis Remix).mp3",
+	"Co gai m52.mp3",
+	"Chay ngay di.mp3",
+	"Noi nay co anh.mp3",
+	"Vi yeu cu dam dau.mp3",
+	"Muon roi ma sao con.mp3",
+	"Co chac yeu la day.mp3",
+	"Cuoi thoi.mp3",
 
 
 ];
@@ -130,7 +131,7 @@ const musics = [
 	  images[i] +
 	  '"/></div><div class="name' +
 	  i +
-	  '">' +
+	  '" style="text-transform: capitalize;">' +
 	  names[i] +
 	  '</div><div class="play' +
 	  i +

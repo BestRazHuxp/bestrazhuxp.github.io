@@ -22,7 +22,7 @@ const musics = [];
 	"Đường tôi chở em về (Cukak remix)",
 	"Chạy về khóc với anh (Cukak remix)",
 	"Lemon",
-	"Yoru ni kakeru",
+	"Yoru ni Kakeru",
 	"Tabun",
 	"Normal no more",
 	"Heads Will Roll (Jaydon Lewis Remix)",
@@ -84,7 +84,7 @@ const musics = [];
 	  i +
 	  '" style="text-transform: capitalize;">' +
 	  names[i] +
-	  '</div><div class="play' +
+	  '</div><div class="play' +	
 	  i +
 	  '" id="ok' +
 	  i +
@@ -100,7 +100,7 @@ const musics = [];
 	  fontSize: "20px",
 	  borderRadius: "100rem",
 	  margin: "0 10px 0 0",
-	  cursor:"pointer",
+	 
 	};
 	const bruh = {
 		
@@ -110,6 +110,7 @@ const musics = [];
 	  height: "50px",
 	  margin: "0 0 0 0",
 	  padding: "0 0 0 0",
+	 
 	};
 	const picimg = {
 	  width: "100%",
@@ -131,6 +132,7 @@ const musics = [];
 	  width : "400px",
 	  fontSize: "14px",
 	  marginBottom: "40x",
+	  cursor:"pointer",
 	};
 	const hihi = document.getElementById("img" + i);
 	const hehe = document.getElementById("ok" + i);
@@ -157,9 +159,8 @@ const musics = [];
   Object.assign(k.style, Selectionstyle0);
   const playlist = [];
   let p = 0;
-
   for (let i = 0; i < musics.length; i++) {
-	let str = ".play" + i;
+	let str = ".Selection" + i;
 	playlist[i] = document.querySelector(str);
 	playlist[i].addEventListener("click", function () {
 	  playMusics(i);
@@ -415,6 +416,7 @@ const musics = [];
 	const newSelectionsH = SelectionsH + scroll_value;
 	if(newthumbW > 80&&newthumbW <= 200)
 	{
+		thumbb.style.opacity = newthumbW / thumbW;
 		thumbb.style.width = newthumbW + 'px';
 		thumbb.style.height = newthumbW + 'px';
 	}

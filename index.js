@@ -22,7 +22,7 @@ const musics = [];
 	"Đường tôi chở em về (Cukak remix)",
 	"Chạy về khóc với anh (Cukak remix)",
 	"Lemon",
-	"Yoru ni Kakeru",
+	"Yoru ni kakeru",
 	"Tabun",
 	"Normal no more",
 	"Heads Will Roll (Jaydon Lewis Remix)",

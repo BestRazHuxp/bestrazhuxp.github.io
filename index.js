@@ -45,7 +45,7 @@ const musics = [];
 	"Past lives",
 	"Entre nous",
   ];
-  console.log(namess.length);
+  
   const names = [];
   let checck =[];
   for(let i = 0; i < namess.length; i++)
@@ -100,46 +100,7 @@ const musics = [];
 	newdiv.setAttribute("id", "lol" + i);
 	document.getElementById("buh").appendChild(newdiv);
   }
-  document.querySelector(".music").innerHTML = 	"<div id='image' class='thumb'>"
-   + "<img"
-	+  " src='"+ images[0] + "'"
-	+"/>"
-  +"</div>"
-  +"<h3 class='music_name' id='name'>"+names[0]+"</h3>"
-  +"<input type='range' name='song' class='range' step='0.00000000000000000000000000000000001' />"
-  +"<audio"
-   + "src='"+musics[nums]+"'"
-	+"id='song'"
-  +"></audio>"
-  +"<div class='timer'>"
-   + "<div class='duration'>0:00</div>"
-	+"<div class='remaining'></div>"
-  +"</div>"
-  +"<div class='controls'>"
-   + "<div class='repeat' style='color:black;'>"
-	+  "<ion-icon name='repeat-outline'></ion-icon>"
-	+"</div>"
-	+"<div class='play-prev'>"
-	  +"<ion-icon name='play-skip-back' class='skip-back'></ion-icon>"
-	+"</div>"
-	+"<div class='play-back'>"
-	 + "<ion-icon name='play-back' class='play-back'></ion-icon>"
-	+"</div>"
-	+"<div class='play'>"
-	  +"<div class='player-inner'>"
-		+"<ion-icon name='play'></ion-icon>"
-	  +"</div>"
-   + "</div>"
-	+"<div class='play-forward'>"
-	 + "<ion-icon name='play-forward' class='play-forward'></ion-icon>"
-	+"</div>"
-	+"<div class='play-next'>"
-	 + "<ion-icon name='play-skip-forward'></ion-icon>"
-	+"</div>"
-	+"<div class='shuffle' style='color:black;'>"
-	+  "<ion-icon name='shuffle'></ion-icon>"
-	 + "</div>"
-  +"</div>"
+  
   let Selectionstyle = {
 	backgroundColor: "pink",
 	maxWidth: "500px",
@@ -154,6 +115,8 @@ const musics = [];
 	marginBottom: "40x",
 	width:"350px",
   };
+  document.getElementById("image_thumb").setAttribute("src", images[0]);
+  document.querySelector(".music_name").innerHTML = names[0];
   
 
   const k = document.getElementById("lol0");
@@ -501,7 +464,7 @@ const musics = [];
 		}
   }
   reapeatBtn.addEventListener("click",repeatSong);
-  const Selections = document.querySelector('.selection');
+  const Selections = document.querySelector('.Selection');
   const thumbb = document.querySelector('.thumb');
   Selections.addEventListener("scroll",function()
   {

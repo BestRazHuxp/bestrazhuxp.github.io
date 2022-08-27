@@ -129,8 +129,7 @@ h3 {
   margin: 0 0 0 0 ;
   overflow: hidden;
   overflow-y:scroll;
-  
-  max-height: 350px;
+  max-height: 400px;
 }
 .audio {
   background-color: white;
@@ -148,6 +147,7 @@ h3 {
   width: 10px;
   border-radius: 12px;
   height: 5px;
+  
 }
 
 /* Track */
@@ -221,9 +221,9 @@ h3 {
   font-size: 20px;
   position: relative;
   z-index: 2;
-  transition: transform 1s, box-shadow 3s, rotate 1s;
+  transition: transform 0.5s, box-shadow 3s, rotate 1s;
 }
-.player-inner:hover {
+.player-inner:active {
   rotate: 10deg;
   box-shadow: 0 0 9px rgba(0, 0, 0, 10000);
   transform: scale(1.1);

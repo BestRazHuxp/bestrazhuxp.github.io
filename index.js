@@ -7,7 +7,7 @@ const musics = [];
   const name = document.getElementById("name");
   const durationTime = document.querySelector(".duration");
   const remainingTime = document.querySelector(".remaining");
-  const names = [
+  const namess = [
 	"Ooh Just You",
 	"Berlin",
 	"Yêu 5",
@@ -40,7 +40,46 @@ const musics = [];
 	"this is what falling in love feels like",
 	"Industry baby",
 	"Old town road",
+	"comethru",
+	"Just the two of us",
+	"Past lives",
+	"Entre nous",
   ];
+  console.log(namess.length);
+  const names = [];
+  let checck =[];
+  for(let i = 0; i < namess.length; i++)
+  {
+	checck[i]=false;
+  }
+  function checkingg()
+  {
+	for(let i=0;i<namess.length;i++) {
+		if(checck[i]==false)
+		{
+			return false;
+		}
+	}
+	return true;
+  }
+  let ko =0;
+  function randomizing(){
+	let index = randomfunc(0,namess.length);
+		while(checck[index]==true&&checkingg()==false)
+		{
+			index = randomfunc(0,namess.length);
+		}
+		if(checck[index]==false)
+		{
+			names[ko] = namess[index];
+			checck[index] = true;
+			ko++;
+		}
+  }
+  for(let i=0;i<namess.length;i++)
+  {
+	randomizing();
+  }
   for(let i=0;i<names.length;i++)
 {
 	musics[i]= './musics/'+names[i]+'.mp3';
@@ -61,6 +100,46 @@ const musics = [];
 	newdiv.setAttribute("id", "lol" + i);
 	document.getElementById("buh").appendChild(newdiv);
   }
+  document.querySelector(".music").innerHTML = 	"<div id='image' class='thumb'>"
+   + "<img"
+	+  " src='"+ images[0] + "'"
+	+"/>"
+  +"</div>"
+  +"<h3 class='music_name' id='name'>"+names[0]+"</h3>"
+  +"<input type='range' name='song' class='range' step='0.00000000000000000000000000000000001' />"
+  +"<audio"
+   + "src='"+musics[nums]+"'"
+	+"id='song'"
+  +"></audio>"
+  +"<div class='timer'>"
+   + "<div class='duration'>0:00</div>"
+	+"<div class='remaining'></div>"
+  +"</div>"
+  +"<div class='controls'>"
+   + "<div class='repeat' style='color:black;'>"
+	+  "<ion-icon name='repeat-outline'></ion-icon>"
+	+"</div>"
+	+"<div class='play-prev'>"
+	  +"<ion-icon name='play-skip-back' class='skip-back'></ion-icon>"
+	+"</div>"
+	+"<div class='play-back'>"
+	 + "<ion-icon name='play-back' class='play-back'></ion-icon>"
+	+"</div>"
+	+"<div class='play'>"
+	  +"<div class='player-inner'>"
+		+"<ion-icon name='play'></ion-icon>"
+	  +"</div>"
+   + "</div>"
+	+"<div class='play-forward'>"
+	 + "<ion-icon name='play-forward' class='play-forward'></ion-icon>"
+	+"</div>"
+	+"<div class='play-next'>"
+	 + "<ion-icon name='play-skip-forward'></ion-icon>"
+	+"</div>"
+	+"<div class='shuffle' style='color:black;'>"
+	+  "<ion-icon name='shuffle'></ion-icon>"
+	 + "</div>"
+  +"</div>"
   let Selectionstyle = {
 	backgroundColor: "pink",
 	maxWidth: "500px",
@@ -75,6 +154,8 @@ const musics = [];
 	marginBottom: "40x",
 	width:"350px",
   };
+  
+
   const k = document.getElementById("lol0");
   for (let i = 0; i < musics.length; i++) {
 	const hoi = document.getElementById("lol" + i);
@@ -110,7 +191,7 @@ const musics = [];
 	 
 	};
 	const bruh = {
-		
+	
 	}
 	const pic = {
 	  width: "50px",
@@ -280,15 +361,17 @@ const musics = [];
   function playPause() {
 	const playBtnplaylist = document.querySelector(".play" + nums);
 	if (isPlaying) {
+		playBtn.innerHTML = '<ion-icon name="pause"></ion-icon>';
+		playBtnplaylist.innerHTML = '<ion-icon name="pause"></ion-icon>';
+		
 	  song.play();
-	  playBtn.innerHTML = '<ion-icon name="pause"></ion-icon>';
-	  playBtnplaylist.innerHTML = '<ion-icon name="pause"></ion-icon>';
 	  playlistcheck[nums] = false;
 	  isPlaying = false;
 	} else {
-	  song.pause();
 	  playBtn.innerHTML = '<ion-icon name="play"></ion-icon>';
 	  playBtnplaylist.innerHTML = '<ion-icon name="play"></ion-icon>';
+		
+	  song.pause();
 	  isPlaying = true;
 	  playlistcheck[nums] = true;
 	}
@@ -309,13 +392,14 @@ const musics = [];
 	  }
 	}
 	rangeBar.max = duration;
-	rangeBar.value = song.currentTime;
+	//rangeBar.value = song.currentTime;
 	if (!duration) {
 	  durationTime.textContent = "0:00";
 	} else {
 	  durationTime.textContent = formatTimer(currentTime);
 	  remainingTime.textContent = "-" + formatTimer(duration - currentTime);
 	}
+	rangeBar.value = song.currentTime;
   }
   function formatTimer(number) {
 	const minutes = Math.floor(number / 60);
@@ -329,7 +413,15 @@ const musics = [];
   }
   displayTimer();
   const rangebarr = setInterval(displayTimer, 1000);
-  rangeBar.addEventListener("change", handleRangebarChanging);
+  let rangebarcheck = false;
+  rangeBar.addEventListener("change", function(){
+	handleRangebarChanging();
+	}
+	);
+  rangeBar.addEventListener("static", function (){
+	rangeBar.value = song.currentTime;
+  });
+
   function handleRangebarChanging() {
 	song.currentTime = rangeBar.value;
   }
@@ -354,7 +446,6 @@ const musics = [];
 		}
 	}
 	return true;
-
   }
   function concu(){
 	let index = randomfunc(0,musics.length);
@@ -375,7 +466,6 @@ const musics = [];
 			playMusics(index);
 			checker[index] = true;
 		}
-		
   }
   let israndom = false;
   function randomplay()
@@ -410,14 +500,12 @@ const musics = [];
 			isRepeat = false;
 		}
   }
-  
   reapeatBtn.addEventListener("click",repeatSong);
   const Selections = document.querySelector('.selection');
   const thumbb = document.querySelector('.thumb');
   Selections.addEventListener("scroll",function()
   {
 	const scroll_value = Selections.scrollTop;
-	
 	const newthumbW = thumbW - scroll_value;
 	const newMusicH = musicH - scroll_value;
 	const newSelectionsH = SelectionsH + scroll_value;
@@ -436,9 +524,6 @@ const musics = [];
 		thumbb.style.width = 200;
 		thumbb.style.height = 200;
 	}
-	
-	
-	
 	/*if(newSelectionsH <400)
 	{
 		Selections.style.height=newSelectionsH + 'px';
@@ -447,10 +532,17 @@ const musics = [];
 		Selections.style.height=400 + 'px';
 	}*/
   });
+  const volumee = document.querySelector('.volume');
+  volumee.addEventListener('change',function()
+  {
+	song.volume = volumee.value;
+  });
   const thumbW = thumbb.offsetWidth;
   const musicc = document.querySelector('.music');
   const musicH = musicc.offsetHeight;
   const SelectionsH = Selections.offsetHeight;
+  volumee.value=1;
+  song.volume=1;
   
   
 

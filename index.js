@@ -33,7 +33,13 @@ const musics = [];
 	"Muộn rồi mà sao còn",
 	"Có chắc yêu là đây",
 	"Cưới thôi",
-	"Đường tôi chở em về"
+	"Đường tôi chở em về",
+	"Hành lang cũ",
+	"Simple love",
+	"Light switch",
+	"this is what falling in love feels like",
+	"Industry baby",
+	"Old town road",
   ];
   for(let i=0;i<names.length;i++)
 {

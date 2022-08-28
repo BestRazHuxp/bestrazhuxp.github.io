@@ -45,6 +45,10 @@ const musics = [];
 	"Past lives",
 	"Entre nous",
 	"Nghe bài này đi em",
+	"Gác lại âu lo",
+	"See tình",
+	"Kẻ cắp gặp bà già",
+	"Để mị nói cho mà nghe",
   ];
   
   const names = [];

@@ -46,14 +46,15 @@ const musics = [];
 	"Entre nous",
 	"Nghe bài này đi em",
 	"Gác lại âu lo",
+	"Để mị nói cho mà nghe",
 	"See tình",
 	"Kẻ cắp gặp bà già",
-	"Để mị nói cho mà nghe",
 	"T-shirt (Moonbeat remix)",
 	"Quăng tao cái boong (Masew mix)",
 	"Cô gái bàn bên",
+	"Hôm nay trời nhiều mây cực",
   ];
-  
+  const removes =[];
   const names = [];
   let checck =[];
   for(let i = 0; i < namess.length; i++)
@@ -129,8 +130,10 @@ const musics = [];
 
   const k = document.getElementById("lol0");
   for (let i = 0; i < musics.length; i++) {
+	removes[i]=false;
 	const hoi = document.getElementById("lol" + i);
 	hoi.innerHTML =
+	
 	  '<div class="thumb' +
 	  i +
 	  '" id="hi' +
@@ -143,11 +146,16 @@ const musics = [];
 	  i +
 	  '" style="text-transform: capitalize;">' +
 	  names[i] +
-	  '</div><div class="play' +	
+	  '</div><div class="selection_buttons'+i+'" id="selection_buttons'+i+'">'
+	  +'<div class="remove'+i+'" id="remove'+i+'">' 
+	 + '<ion-icon name="remove-circle"></ion-icon>'
+	+ '</div>'
+	  +'<div class="play' +	
 	  i +
 	  '" id="ok' +
 	  i +
-	  '"> <ion-icon name="play"-></ion-icon></div>';
+	  '"> <ion-icon name="play"-></ion-icon></div>'
+	  +'</div>'
 	const styles = {
 	  width: "40px",
 	  height: "40px",
@@ -159,6 +167,7 @@ const musics = [];
 	  fontSize: "20px",
 	  borderRadius: "100rem",
 	  margin: "0 10px 0 0",
+	  cursor:"pointer",
 	 
 	};
 	const bruh = {
@@ -169,7 +178,7 @@ const musics = [];
 	  height: "50px",
 	  margin: "0 0 0 0",
 	  padding: "0 0 0 0",
-	 
+	  cursor:"pointer",
 	};
 	const picimg = {
 	  width: "100%",
@@ -191,16 +200,53 @@ const musics = [];
 	  width : "400px",
 	  fontSize: "14px",
 	  marginBottom: "40x",
-	  cursor:"pointer",
+	  
+	};
+	Demove = {
+		transform: "scale(1.5)",
+		margin: "0 15px 0px 0",
+		cursor:"pointer",
+		//backgroundColor:'black',
+		borderRadius: "100px",
+		
+		//color:"white",
+	}
+	selection_buttonss={
+		justifyContent: "space-between",
+		display: "flex",
+		alignItems: "center",
 	};
 	const hihi = document.getElementById("img" + i);
 	const hehe = document.getElementById("ok" + i);
 	const hoho = document.getElementById("hi" + i);
 	const kaka = document.getElementById("lol" + i);
+	const koko = document.getElementById("selection_buttons"+i);
+	const keke = document.getElementById("remove"+i);
+	Object.assign(koko.style,selection_buttonss);
 	Object.assign(hoho.style, pic);
 	Object.assign(hehe.style, styles);
 	Object.assign(hihi.style, picimg);
 	Object.assign(kaka.style, Selectionstyle);
+	Object.assign(keke.style,Demove);
+	const removess = document.querySelector(".remove"+i);
+	removess.addEventListener( "click", function()
+	{
+		removing(i);
+	})
+  }
+  function removing(i)
+  {
+	const changingitem=document.getElementById("remove"+i);
+	if(removes[i])
+		{
+			changingitem.innerHTML= '<ion-icon name="remove-circle"></ion-icon>';
+			removes[i]=false;
+			
+		}
+		else{
+			changingitem.innerHTML = '<ion-icon name="add-circle"></ion-icon>';
+			removes[i]=true;
+		}
   }
   const Selectionstyle0 = {
 	backgroundColor: "#1abc9c",
@@ -215,15 +261,20 @@ const musics = [];
 	fontSize: "14px",
 	marginBottom: "40x",
   };
+ 
   Object.assign(k.style, Selectionstyle0);
   const playlist = [];
   let p = 0;
   for (let i = 0; i < musics.length; i++) {
-	let str = ".Selection" + i;
-	playlist[i] = document.querySelector(str);
-	playlist[i].addEventListener("click", function () {
+	document.querySelector('.name'+i).addEventListener("click", function () {
 	  playMusics(i);
 	});
+	document.querySelector('.play'+i).addEventListener("click", function () {
+		playMusics(i);
+	  });
+	  document.querySelector('.thumb'+i).addEventListener("click", function () {
+		playMusics(i);
+	  });
   }
   function playPauseplaylist(i) {
 	const st = ".play" + i;
@@ -299,34 +350,42 @@ const musics = [];
 	const hehe = document.getElementById("lol" + nums);
 	Object.assign(hehe.style, Selectionstyle);
 	hihi.innerHTML = '<ion-icon name="play"></ion-icon>';
+	fixbug1(num);
 	if(israndom)
 	{
 		concu()
 	}
-	else{
-	if (num == -1) {
-	  if (nums + num < 0) {
-		nums = musics.length - 1;
-	  } else {
-		nums--;
-	  }
-	  song.setAttribute("src", musics[nums]);
+	else if(removes[nums])
+	{
+		changeSong(num);
 	}
-	if (num == 1) {
-	  if (nums + num >= musics.length) {
-		nums = 0;
-	  } else {
-		nums++;
-	  }
-	  song.setAttribute("src", musics[nums]);
-	}
-}
+	else if(!removes[nums]){
+	song.setAttribute("src", musics[nums]);
 	const keke = document.getElementById("lol" + nums);
 	Object.assign(keke.style, Selectionstyle0);
 	image.innerHTML = '<img  src="' + images[nums] + '">';
 	isPlaying = true;
 	playPause();
 	name.innerHTML = names[nums];
+}
+	
+  }
+  function fixbug1(num)
+  {
+	if (num == -1) {
+		if (nums + num < 0) {
+		  nums = musics.length - 1;
+		} else {
+		  nums--;
+		}
+	  }
+	  if (num == 1) {
+		if (nums + num >= musics.length) {
+		  nums=0;
+		} else {
+		  nums++;
+		}
+	  }
   }
   playBtn.addEventListener("click", playPause);
   function playPause() {

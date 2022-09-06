@@ -6,9 +6,11 @@
   font-display: swap;
 }
 html {
-  background: black;
+ 
   font-family: "iciel be cool";
   color: black;
+  background-color: black;
+
 }
 h1 {
   color: rgb(4, 112, 4);
@@ -47,7 +49,8 @@ body {
   min-height: 1px;
   max-height: 350px;
   color: black;
-  
+  position:none;
+ 
 }
 .music_name {
   color: black;
@@ -130,6 +133,7 @@ h3 {
   overflow: hidden;
   overflow-y:scroll;
   max-height: 400px;
+  
 }
 .audio {
   background-color: white;
@@ -221,12 +225,13 @@ h3 {
   font-size: 20px;
   position: relative;
   z-index: 2;
-  transition: transform 0.5s, box-shadow 3s, rotate 1s;
+  transition: transform 0.5s, box-shadow 2s, rotate 0.5s;
 }
-.player-inner:active {
+.player-inner:hover {
   rotate: 10deg;
-  box-shadow: 0 0 9px rgba(0, 0, 0, 10000);
+  box-shadow: 0 0 9px rgba(0, 0, 0, 0.4);
   transform: scale(1.1);
+
 }
 .volume-bar {
   display: flex;
@@ -301,4 +306,42 @@ h3 {
   transform: scale(1.6);
   padding : 0 0 0 10px
 }
+.modal-footer{
+  align-items: center;
+  
+  justify-content: space-between;
+}
+.search-box{
+  background-color: white;
+  width: 30px;
+  height: 30px;
+  align-items: center;
+  justify-content: space-between;
+  display:flex;
+  border-radius: 100px;
+  text-align: center;
+  transition: width 1s;
+  margin : 0 0 0 100px;
+  overflow: hidden;
+}
+.search-icon{
+  padding: 0 0 0 7px;
+  position: absolute;
+ 
+}
+.search-box:hover{
+  width: 250px;
+}
+.search-input{
+  border: none;
+background-color: transparent;
+resize: none;
+outline: none;
+width : 0;
+transition: width 1s;
+padding : 0 0 0 30px;
+}
+.search-box:hover .search-input{
+  width: 250px;
 
+}

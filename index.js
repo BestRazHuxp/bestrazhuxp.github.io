@@ -62,7 +62,9 @@ const musics = [];
 	"Đi để trở về",
 	"Gieo quẻ",
 	"Tình đắng như ly cà phê",
-	"Chuyện rằng",	
+	"Chuyện rằng",
+	"Ai đưa em về",
+	"Mặt mộc",
   ];
   const removes =[];
   const names = [];

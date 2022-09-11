@@ -53,6 +53,16 @@ const musics = [];
 	"Quăng tao cái boong (Masew mix)",
 	"Cô gái bàn bên",
 	"Hôm nay trời nhiều mây cực",
+	"Phải chăng em đã yêu",
+	"Bài ka tuổi trẻ",
+	"Có không giữ mất đừng tìm",
+	"Lớn rồi còn khóc nhè",
+	"Mang tiền về cho mẹ",
+	"Đi về nhà",
+	"Đi để trở về",
+	"Gieo quẻ",
+	"Tình đắng như ly cà phê",
+	"Chuyện rằng",	
   ];
   const removes =[];
   const names = [];

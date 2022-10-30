@@ -80,6 +80,8 @@ const namess = [
 	"Sorry",
 	"Em có nghe",
 	"Anh thề đấy (Cukak remix)",
+	"Chìm sâu",
+	"Có em chờ",
 ];
 const removes = [];
 const names = [];
